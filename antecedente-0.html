@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Bootstrap demo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+        <style>
+            @media (min-width: 992px) {
+                .container {
+                    max-width: 900px;
+                }
+            }
+            .card,
+            .card-img-top {
+                border: none;
+                border-radius: 0 0;
+            }
+        </style>
+    </head>
+    <body class="bg-light">
+        <header class="container">
+            <div class="row">
+                <div class="col-12 py-3">
+                    <h2 class="text-center mt-5 text-muted fs-4">Sheridan Erices</h2>
+
+                    <h1 class="text-center mt-3 mb-4 fs-2"><a href="index.html">Cat Care</a></h1>
+
+                    <p class="lead text-center mx-auto w-75">Esta página web permitirá a personas aprender sobre los principales cuidados de los gatos.</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="container" id="antecedentes">
+            <div class="row">
+                <div class="col-12 pt-3 pb-5">
+                    <h3 class="text-center mt-5 mb-4"><a href="index.html#antecedentes">&larr;</a> | Best Cat</h3>
+
+                    <img src="img/antecedente-0.png" class="w-100 mb-3 shadow-sm" />
+                    <p class="m-4 text-muted">
+                        Bestcat es la primera inspiración para Cat Care, fue elegida por sus llamativos íconos y paleta de colores que invitan al usuario a seguir descubriendo la página. En general tuvo un buen desempeño en Lighthouse, destacando por sobre todo en Best Practices. Dado lo anterior su Desirability es calificada como un 90. 
+                    </p>
+
+                    <canvas id="grafico" class="w-50 mx-auto my-5"></canvas>
+
+                    <p class="m-4 text-muted">
+                        De acuerdo con los resultados de <a href="https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fwww.bestcat.com%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo&category=pwa&utm_source=lh-chrome-ext" target="_blank">LightHouse</a>: Las
+                      se podría reducir el tamaño de las imágenes así como el CSS. Destaca que el fondo y los otros colores no tienen un contraste suficiente.
+                    </p>
+
+                    <h3 class="text-center mt-5 mb-4 text-decoration-underline">Otros antecedentes</h3>
+
+                    <div class="row row-cols-1 row-cols-md-3 pb-3">
+                        <div class="col mb-3">
+                            <div class="card h-100 shadow-sm">
+                                <img src="img/antecedente-thumb-1.jpg" class="card-img-top" alt="Gabrica" />
+                                <div class="card-body">
+                                    <h6 class="card-title">Blog sobre mascotas</h6>
+                                    <p class="card-text small"><a href="antecedente-1.html" class="stretched-link">Ver análisis &rarr;</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-3">
+                            <div class="card h-100 shadow-sm">
+                                <img src="img/antecedente-thumb-2.jpg" class="card-img-top" alt="Nature's variety" />
+                                <div class="card-body">
+                                    <h6 class="card-title">Web que incluye guías prácticas en el cuidado de animales</h6>
+                                    <p class="card-text small"><a href="antecedente-2.html" class="stretched-link">Ver análisis &rarr;</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mb-3">
+                            <div class="card h-100 shadow-sm">
+                                <img src="img/antecedente-thumb-3.png" class="card-img-top" alt="Mirringo" />
+                                <div class="card-body">
+                                    <h6 class="card-title">Página con posibilidad a venta de productos y demás accesos de mascotas</h6>
+                                    <p class="card-text small"><a href="antecedente-3.html" class="stretched-link">Ver análisis &rarr;</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-secondary">
+            <div class="container text-white-50">
+                <div class="row py-3">
+                    <div class="col-12">
+                        <p class="d-flex justify-content-between small p-1 m-0">
+                            <a href="index.html">Cat Care</a>
+                            <!--reemplaza el # que sigue con vínculo a tu propio GitHub-->
+                            <a href="#" class="d-none d-lg-inline">Nombre Apellido © 2022</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"
+            integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script>
+            const config = {
+                type: "radar",
+                data: {
+                    labels: ["PERFORMANCE", "ACCESIBILITY", "BEST PRACTICES", "SEO", "DESIRABILITY"],
+                    datasets: [
+                        {
+                            data: [51, 64, 100, 85, 90],
+                            fill: true,
+                            backgroundColor: "rgba(255, 99, 132, 0.2)",
+                            borderColor: "rgb(255, 99, 132)",
+                        },
+                    ],
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: false,
+                        },
+                    },
+                    scale: {
+                        min: 0,
+                        max: 100,
+                    },
+                },
+            };
+            const myChart = new Chart(document.getElementById("grafico"), config);
+            document.querySelectorAll("a").forEach((a) => a.classList.add("link-dark"));
+        </script>
+    </body>
+</html>
